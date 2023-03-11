@@ -1,6 +1,6 @@
-# Template Repo For TDD with Jest
+# Planetary Age Calculator
 
-#### This repository is a template to create a TDD enviroment for any javaScript project.
+#### This is an age calculator to determine an earthling's age on the other planets of the solar system.
 
 #### By Tyler Adams
 
@@ -13,8 +13,6 @@
 - _eslint_
 - _jest_
 - _babel_
-
-## Description
 
 ## Setup/Installation Requirements
 
