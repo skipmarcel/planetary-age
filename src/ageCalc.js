@@ -1,14 +1,15 @@
 export default class PlanetAge {
-  constructor() {
+  constructor(ageInDays) {
+    this.age = ageInDays;
     this.orbitalPeriods = {
       earth: 365.25,
       mercury: 87.97,
       venus: 224.7,
       mars: 686.97,
-      jupiter: 4332.7,
+      jupiter: 4332.59,
       saturn: 10759.22,
-      uranus: 30685.49,
-      neptune: 60191.19,
+      uranus: 30685.4,
+      neptune: 60190.03,
       pluto: 90799.98,
     };
   }
@@ -16,6 +17,8 @@ export default class PlanetAge {
   compAge(planet) {
     const earthDaysPerYear = this.orbitalPeriods["earth"];
     const planetDaysPerYear = this.orbitalPeriods[planet];
-    return Number((earthDaysPerYear / planetDaysPerYear).toFixed(2));
+    return Number(
+      ((this.age * earthDaysPerYear) / planetDaysPerYear).toFixed(2)
+    );
   }
 }

@@ -1,16 +1,45 @@
 import PlanetAge from "./../src/ageCalc.js";
 
 describe("PlanetAge", () => {
-  test("should correctly divide one earth year in days by one planet year in days", () => {
-    const planetAge = new PlanetAge();
-    const expected = 365.25 / 87.97;
-    const result = planetAge.compAge("mercury");
-    expect(result).toBeCloseTo(expected);
+  let planetAge;
+
+  beforeEach(() => {
+    const ageInDays = 48;
+    planetAge = new PlanetAge(ageInDays);
   });
-  test("should correctly multiply result by ageInDays", () => {
-    const planetAge = new PlanetAge(48 * 365.25);
-    const expected = (365.25 / 87.97) * 48;
-    const result = planetAge.compAge("mercury");
-    expect(result).toBeCloseTo(expected);
+
+  it("should calculate age on Mercury correctly", () => {
+    expect(planetAge.compAge("mercury")).toBeCloseTo(199.3, 2);
+  });
+
+  it("should calculate age on Venus correctly", () => {
+    expect(planetAge.compAge("venus")).toBeCloseTo(78.02, 2);
+  });
+
+  it("should calculate age on Mars correctly", () => {
+    expect(planetAge.compAge("mars")).toBeCloseTo(25.52, 2);
+  });
+
+  it("should calculate age on Jupiter correctly", () => {
+    expect(planetAge.compAge("jupiter")).toBeCloseTo(4.05, 2);
+  });
+
+  it("should calculate age on Saturn correctly", () => {
+    expect(planetAge.compAge("saturn")).toBeCloseTo(1.63, 2);
+  });
+
+  it("should calculate age on Uranus correctly", () => {
+    expect(planetAge.compAge("uranus")).toBeCloseTo(0.57, 2);
+  });
+
+  it("should calculate age on Neptune correctly", () => {
+    expect(planetAge.compAge("neptune")).toBeCloseTo(0.29, 2);
+  });
+
+  it("should calculate age on Earth correctly", () => {
+    expect(planetAge.compAge("earth")).toBeCloseTo(48, 2);
+  });
+  it("should calculate age on Pluto correctly", () => {
+    expect(planetAge.compAge("pluto")).toBeCloseTo(0.19, 2);
   });
 });
