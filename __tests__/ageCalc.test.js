@@ -46,6 +46,6 @@ describe("PlanetAge", () => {
     expect(planetAge.yearsHavePast(40, "earth")).toBeCloseTo(8, 2);
   });
   it("should calculate years that will pass until next birthday", () => {
-    expect(planetAge.yearsWillPast(68, "earth")).toBeCloseTo(20, 2);
+    expect(planetAge.yearsWillPass(68, "earth")).toBeCloseTo(20, 2);
   });
 });
