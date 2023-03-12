@@ -21,4 +21,13 @@ export default class PlanetAge {
       ((this.age * earthDaysPerYear) / planetDaysPerYear).toFixed(2)
     );
   }
+
+  yearsHavePast(pastAge, planet) {
+    const earthDaysPerYear = this.orbitalPeriods["earth"];
+    const planetDaysPerYear = this.orbitalPeriods[planet];
+    const difference = this.age - pastAge;
+    const multEarth = difference * earthDaysPerYear;
+    const pastYears = multEarth / planetDaysPerYear;
+    return Number(pastYears.toFixed(2));
+  }
 }

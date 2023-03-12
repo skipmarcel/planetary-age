@@ -43,6 +43,6 @@ describe("PlanetAge", () => {
     expect(planetAge.compAge("pluto")).toBeCloseTo(0.19, 2);
   });
   it("should calculate years passed since last birthday", () => {
-    expect(planetAge.yearsHavePast(48, 40, "earth")).toBeCloseTo(8, 2);
+    expect(planetAge.yearsHavePast(40, "earth")).toBeCloseTo(8, 2);
   });
 });
